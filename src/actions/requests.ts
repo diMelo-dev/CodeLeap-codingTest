@@ -13,6 +13,29 @@ const api = {
         } catch(error) {
             console.log(`Error: ${error}`);
         }
+    },
+    
+    createPost: async (userName: string, title: string, content: string) => {
+        try {
+            const res = await fetch(baseUrl, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: userName,
+                    title: title,
+                    content: content
+                })
+            });
+
+            const json = res.json();
+
+            return json;
+        } catch(error) {
+            console.log(`Error: ${error}`);
+        }
     }
 }
 
