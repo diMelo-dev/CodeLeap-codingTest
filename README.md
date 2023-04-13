@@ -67,4 +67,7 @@ npm run dev
 
 # :raising_hand_man: Author
 
+<img id="author" src="https://user-images.githubusercontent.com/115842979/231891383-55bdb24d-e5c3-4c16-99e3-02d49f0049b6.png" width="100" />
+
+Made with :heart: by [Danilo Melo](https://www.linkedin.com/in/danilo-melo-788337215/)
 
