@@ -8,11 +8,11 @@
 
 <p align="center">
   <a href="#status">Status</a> •
- <a href="#objective">Objective</a> •
+  <a href="#objective">Objective</a> •
   <a href="#requirements">Requirements</a> •
- <a href="#technologies">Technologies</a> •
- <a href="#features">Features</a> •
- <a href="#author">Author</a>
+  <a href="#technologies">Technologies</a> •
+  <a href="#features">Features</a> •
+  <a href="#author">Author</a>
 </p>
 
 <h3 id="status" align="center"> 
@@ -23,7 +23,48 @@
 <p id="objective">The objective of this project is to create a system that allows the user to create their own posts and view the posts of other users.</p>
 
 # :clipboard: Requirements
-<p id="requirements">You will need to have, Git installed</p>
+<p id="requirements">You will need to have, Git and Node installed</p>
 <p>First, clone this repository on your computer.</p>
-`git clone`
+
+```git
+git clone https://github.com/diMelo-dev/CodeLeap-codingTest.git
+```
+
+<p>Install the dependencies</p>
+
+```git
+npm install
+```
+
+<p>Run the application</p>
+
+```git
+npm run dev
+```
+
+# 🛠 Technologies
+
+<p id="technologies">The following technologies were used in building the project:</p>
+
+- [Node.js](https://nodejs.org/en/)
+- [React](https://pt-br.reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+
+# :wave: Features
+
+<p id="features">The project has the following features:</p>
+
+- Login: The user enters a username to create and edit their posts
+- Create Post: The user can create a post with title and content
+- Post List: The system presents a list of the most recent posts
+- Edit Post: User can edit the title and content of their old posts
+- Delete Post: User can delete their old posts
+- Pagination: User can page forward and backward to display more post results
+- Mobile Responsive: The layout is responsive on mobile devices
+- Loading: During requests, a loading component is displayed on the screen
+
+
+# :raising_hand_man: Author
+
 
