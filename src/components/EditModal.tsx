@@ -17,7 +17,6 @@ export function EditModal({active, cancelClick, post, getPosts}: Props) {
     const [contentField, setContentField] = useState(post.content);
 
     async function handleSaveClick() {
-        //Faço a req para editar
         const json = await api.editPost(post.id, titleField, contentField);
         window.scrollTo({
             top: 0,

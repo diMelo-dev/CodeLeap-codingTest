@@ -19,7 +19,6 @@ export function MainScreen() {
     const [postList, setPostList] = useState<PostItemType[]>([]);
     const [offset, setOffset] = useState(0);
     const [loading, setLoading] = useState(true);
-    const [activeDelete, setActiveDelete] = useState(false);
 
     async function handleCreateClick(e: React.FormEvent) {
         e.preventDefault();
