@@ -82,12 +82,12 @@ export function PostItem({data, getPosts}: Props) {
 
     return(
         <div className="max-w-[752px] w-full">
-            <div className="min-h-[70px] p-6 flex items-center rounded-t-2xl bg-[#7695EC]">
-                <h1 className="flex-1 text-[22px] text-white leading-[26px] font-bold break-all">{data.title}</h1>
+            <div className="min-h-[70px] p-6 flex flex-col items-center rounded-t-2xl bg-[#7695EC] sm:flex-row">
+                <h1 className="flex-1 self-start text-[22px] text-white leading-[26px] font-bold break-all">{data.title}</h1>
 
 
                 {isUser && 
-                    <div className="flex gap-[34.2px]">
+                    <div className="self-end flex gap-[34.2px]">
                         
                         <div onClick={handleModalDeleteClick} className="cursor-pointer">
                             <svg width="19" height="22" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,7 +110,7 @@ export function PostItem({data, getPosts}: Props) {
 
                 <div className="flex flex-col justify-between gap-2 text-[#777] sm:flex-row">
 
-                    <div className="font-bold">@{data.username}</div>
+                    <div className="font-bold break-all">@{data.username}</div>
 
                     <div className="self-end">{formatDate(data.created_datetime)}</div>
 
