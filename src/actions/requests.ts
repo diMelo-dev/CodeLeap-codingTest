@@ -24,10 +24,11 @@ const api = {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    username: userName,
-                    title: title,
-                    content: content
-                })
+                        username: userName,
+                        title: title,
+                        content: content
+                    }
+                )
             });
 
             const json = res.json();
@@ -47,6 +48,25 @@ const api = {
                     'Content-Type': 'application/json'
                 }
             });
+        } catch(error) {
+            console.log(`Error: ${error}`);
+        }
+    },
+
+    editPost: async (postId: number, title: string, content: string) => {
+        try { 
+            const res = await fetch(`${baseUrl}${postId}/`, {
+                method: 'PATCH',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                        title: title,
+                        content: content
+                    }
+                )
+            })
         } catch(error) {
             console.log(`Error: ${error}`);
         }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { PostItemType } from "../types/PostItemType";
 import { useAppSelector } from "../redux/hooks/useAppSelector";
 import { DeleteModal } from "./DeleteModal";
+import { EditModal } from "./EditModal";
 
 type Props = {
     data: PostItemType,
@@ -15,6 +16,7 @@ export function PostItem({data, getPosts}: Props) {
 
     const [isUser, setIsUser] = useState(false);
     const [activeDelete, setActiveDelete] = useState(false);
+    const [activeEdit, setActiveEdit] = useState(false);
 
     function formatDate(data: Date) {
         const now = new Date();
@@ -61,6 +63,14 @@ export function PostItem({data, getPosts}: Props) {
         }
     }
 
+    function handleModalEditClick() {
+        if(!activeEdit) {
+            setActiveEdit(true);
+        } else {
+            setActiveEdit(false);
+        }
+    }
+
     useEffect(() => {
         if(user.name === data.username) {
             setIsUser(true);
@@ -69,9 +79,6 @@ export function PostItem({data, getPosts}: Props) {
         }
     }, [user]);
 
-    useEffect(() => {
-
-    }, []);
 
     return(
         <div className="max-w-[752px] w-full">
@@ -88,7 +95,7 @@ export function PostItem({data, getPosts}: Props) {
                             </svg>
                         </div>
 
-                        <div className="cursor-pointer">
+                        <div onClick={handleModalEditClick} className="cursor-pointer">
                             <svg width="23" height="22" fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="m7 17.011 4.413-.015 9.632-9.54c.378-.378.586-.88.586-1.414 0-.534-.208-1.036-.586-1.414l-1.586-1.586c-.756-.756-2.075-.752-2.825-.003L7 12.581v4.43ZM18.045 4.456l1.589 1.583-1.597 1.582-1.586-1.585 1.594-1.58ZM9 13.416l6.03-5.974 1.586 1.586L10.587 15 9 15.004v-1.589Z"></path>
                                 <path d="M5 21h14c1.103 0 2-.897 2-2v-8.668l-2 2V19H8.158c-.026 0-.053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2Z"></path>
@@ -113,7 +120,10 @@ export function PostItem({data, getPosts}: Props) {
 
             </div>
 
+            
             <DeleteModal active={activeDelete} cancelClick={handleModalDeleteClick} postId={data.id} getPosts={getPosts} />
+        
+            <EditModal active={activeEdit} cancelClick={handleModalEditClick} post={data} getPosts={getPosts} />
         </div>
     );
 }

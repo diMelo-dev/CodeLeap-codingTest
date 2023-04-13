@@ -36,7 +36,7 @@ export function DeleteModal({active, cancelClick, postId, getPosts}: Props) {
                         Cancel
                     </div>
 
-                    <div onClick={handleDeleteClick} className="max-w-[120px] w-full min-h-[32px] flex items-center justify-center border-[1px] border-[#999] rounded-lg bg-[#FF5151] text-white cursor-pointer transition-all hover:bg-[#FF5151]/90">
+                    <div onClick={handleDeleteClick} className="max-w-[120px] w-full min-h-[32px] flex items-center justify-center rounded-lg bg-[#FF5151] text-white cursor-pointer transition-all hover:bg-[#FF5151]/90">
                         Delete
                     </div>
 
