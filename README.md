@@ -9,9 +9,9 @@
 <p align="center">
   <a href="#status">Status</a> •
  <a href="#objective">Objective</a> •
+  <a href="#requirements">Requirements</a> •
  <a href="#technologies">Technologies</a> •
  <a href="#features">Features</a> •
- <a href="#requirements">Requirements</a> •
  <a href="#author">Author</a>
 </p>
 
@@ -21,3 +21,9 @@
 
 # :dart: Objective
 <p id="objective">The objective of this project is to create a system that allows the user to create their own posts and view the posts of other users.</p>
+
+# :clipboard: Requirements
+<p id="requirements">You will need to have, Git installed</p>
+<p>First, clone this repository on your computer.</p>
+`git clone`
+
