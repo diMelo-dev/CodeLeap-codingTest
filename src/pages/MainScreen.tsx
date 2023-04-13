@@ -5,6 +5,7 @@ import { PostItemType } from "../types/PostItemType";
 import { PostItem } from "../components/PostItem";
 import useApi from '../actions/requests';
 import { FakeLoading } from "../components/FakeLoading";
+import { DeleteModal } from "../components/DeleteModal";
 
 export function MainScreen() {
 
@@ -18,6 +19,7 @@ export function MainScreen() {
     const [postList, setPostList] = useState<PostItemType[]>([]);
     const [offset, setOffset] = useState(0);
     const [loading, setLoading] = useState(true);
+    const [activeDelete, setActiveDelete] = useState(false);
 
     async function handleCreateClick(e: React.FormEvent) {
         e.preventDefault();
@@ -26,7 +28,7 @@ export function MainScreen() {
             const json = await api.createPost(user.name, titleField, contentField);
             setTitleField('');
             setContentField('');
-            getPosts();
+            getPosts(0);
         }
     }
 
@@ -76,7 +78,7 @@ export function MainScreen() {
     
 
     return(
-        <div className="min-h-screen px-3 flex flex-col items-center bg-[#dddddd]">
+        <div className="relative min-h-screen px-3 flex flex-col items-center bg-[#dddddd]">
             <div className="max-w-[800px] w-full flex flex-col bg-white">
                 <h1 className="min-h-[80px] py-[27px] px-[37px] text-[22px] text-white leading-[26px] font-bold bg-[#7695EC]">
                     CodeLeap Network
@@ -142,7 +144,7 @@ export function MainScreen() {
 
                         {postList && !loading && 
                             postList.map((item, index) => (
-                                <PostItem key={item.id} data={item} />
+                                <PostItem key={item.id} data={item} getPosts={getPosts} />
                             ))
                         }
                     </div>
@@ -167,6 +169,8 @@ export function MainScreen() {
                 </div>
 
             </div>
+
+            
         </div>
     );
 }

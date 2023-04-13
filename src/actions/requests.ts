@@ -36,6 +36,20 @@ const api = {
         } catch(error) {
             console.log(`Error: ${error}`);
         }
+    },
+
+    deletePost: async (postId: number) => {
+        try {
+            const res = await fetch(`${baseUrl}${postId}/`, {
+                method: 'DELETE',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            });
+        } catch(error) {
+            console.log(`Error: ${error}`);
+        }
     }
 }
 
