@@ -36,7 +36,7 @@ export function SignUp() {
         <div className="min-h-screen p-3 flex flex-col items-center justify-center bg-[#dddddd]">
             <div className="max-w-[500px] w-full min-h-[205px] p-6 flex flex-col gap-6 bg-white border-[1px] rounded-[16px] border-[#ccc]">
                 <h1 className="text-[22px] leading-[26px] font-bold">
-                    Welcome to CodeLeap network! {user.name}
+                    Welcome to CodeLeap network!
                 </h1>
 
                 <div className="flex flex-col gap-4">
