@@ -11,6 +11,7 @@
   <a href="#objective">Objective</a> •
   <a href="#requirements">Requirements</a> •
   <a href="#technologies">Technologies</a> •
+  <a href="#access">Access</a> •
   <a href="#features">Features</a> •
   <a href="#author">Author</a>
 </p>
@@ -50,6 +51,10 @@ npm run dev
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 
+# :earth_americas: Access
+
+You can access the application on the following link:
+- [Here](https://codeleap-danilomelo.netlify.app/)
 
 # :wave: Features
 
