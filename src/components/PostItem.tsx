@@ -116,7 +116,7 @@ export function PostItem({data, getPosts}: Props) {
 
                 </div>
 
-                <div className="text-black">{data.content}</div>
+                <div className="text-black break-all">{data.content}</div>
 
             </div>
 
